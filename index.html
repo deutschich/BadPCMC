@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Google Consent Mode -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+    
+      // Default: alles abgelehnt
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BadPCMC - Minecraft Modpack for Low-End PCs</title>
+    <meta name="description" content="BadPCMC is a Minecraft modpack optimized for low-end hardware. Transform your underpowered laptop into a smooth Minecraft experience with performance optimization mods.">
+    <meta name="keywords" content="Minecraft, modpack, low-end, performance, optimization, BadPCMC, Modrinth, Minecraft mods, FPS boost">
+    <meta name="author" content="BadPCMC Modpack">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="BadPCMC - Minecraft Modpack for Low-End PCs">
+    <meta property="og:description" content="Optimized Minecraft experience for low-end hardware. Play smoothly on laptops that struggle with Vanilla Minecraft.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://badpcmc.modpack.example.com">
+    
+    <!-- Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BadPCMC Minecraft Modpack",
+        "applicationCategory": "GameMod",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Minecraft modpack optimized for low-end hardware with performance enhancement mods.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "BadPCMC"
+        },
+        "datePublished": "2025-12-06"
+    }
+    </script>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary-color: #8BC34A;
+            --accent-color: #FF9800;
+            --dark-color: #1A1A1A;
+            --light-color: #F5F5F5;
+            --text-color: #333;
+            --text-light: #777;
+            --minecraft-green: #55AA55;
+            --minecraft-dark-green: #2D882D;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #F57C00;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .logo-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: #e0e0e0;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            display: inline-block;
+        }
+        
+        .mod-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .mod-category {
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .mod-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mod-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mod-icon {
+            color: var(--primary-color);
+        }
+        
+        .mod-list {
+            list-style-type: none;
+        }
+        
+        .mod-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .mod-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .mod-name {
+            font-weight: 500;
+        }
+        
+        .mod-purpose {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        /* Why Section */
+        .why-section {
+            background-color: #f0f7f0;
+        }
+        
+        .why-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .why-text {
+            padding-right: 1rem;
+        }
+        
+        .why-points {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .point {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .point:last-child {
+            margin-bottom: 0;
+        }
+        
+        .point-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+        
+        /* Download Section */
+        .download-section {
+            text-align: center;
+            background-color: white;
+        }
+        
+        .download-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .download-card h2 {
+            color: var(--primary-dark);
+        }
+        
+        .download-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.7rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #b0b0b0;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-color);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .download-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .mod-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-stats {
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        .cookie-banner {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.cookie-box {
+  background: #fff;
+  padding: 24px;
+  max-width: 420px;
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  font-family: system-ui, sans-serif;
+  color: #111827;
+}
+
+.cookie-box h2 {
+  margin-top: 0;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+}
+
+.btn.small {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.settings {
+  margin-top: 15px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+    </style>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+    <div id="cookie-banner" class="cookie-banner hidden">
+  <div class="cookie-box">
+    <h2>🍪 Cookie-Settings</h2>
+    <p>
+      We use cookies to collect visitor statistics and improve our website.
+      You can decide for yourself which cookies you want to allow.
+    </p>
+
+    <div class="cookie-actions">
+      <button id="accept-all" class="btn primary">
+        Accept all
+      </button>
+      <button id="manage-settings" class="btn secondary">
+        Manage preferences
+      </button>
+    </div>
+
+    <div id="cookie-settings" class="settings hidden">
+      <label>
+        <input type="checkbox" id="analytics-consent">
+        Google Analytics (statistics)
+      </label>
+
+      <button id="save-settings" class="btn primary small">
+        Save selection
+      </button>
+    </div>
+  </div>
+</div>
+    <script>
+const banner = document.getElementById('cookie-banner');
+const settings = document.getElementById('cookie-settings');
+const analyticsCheckbox = document.getElementById('analytics-consent');
+
+const consent = localStorage.getItem('cookie-consent');
+
+function loadGA() {
+  const script = document.createElement('script');
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-5H07SV662K";
+  script.async = true;
+  document.head.appendChild(script);
+
+  gtag('js', new Date());
+  gtag('config', 'G-5H07SV662K');
+}
+
+if (!consent) {
+  banner.classList.remove('hidden');
+} else if (consent === 'analytics') {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+  loadGA();
+}
+
+// Alle akzeptieren
+document.getElementById('accept-all').onclick = () => {
+  localStorage.setItem('cookie-consent', 'analytics');
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+  loadGA();
+  banner.classList.add('hidden');
+};
+
+// Einstellungen anzeigen
+document.getElementById('manage-settings').onclick = () => {
+  settings.classList.toggle('hidden');
+};
+
+// Auswahl speichern
+document.getElementById('save-settings').onclick = () => {
+  if (analyticsCheckbox.checked) {
+    localStorage.setItem('cookie-consent', 'analytics');
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    loadGA();
+  } else {
+    localStorage.setItem('cookie-consent', 'none');
+  }
+  banner.classList.add('hidden');
+};
+</script>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-cube logo-icon"></i>
+                <h1>BadPCMC</h1>
+            </div>
+            
+            <nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#why">Why BadPCMC</a>
+                    <a href="#download">Download</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>BadPCMC Minecraft Modpack</h1>
+            <p>Optimized for low-end hardware. Transform your underpowered laptop into a smooth Minecraft experience with carefully selected performance enhancement mods.</p>
+            <div class="hero-btns">
+                <a href="#download" class="btn btn-accent">Download Now</a>
+                <a href="#features" class="btn">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Modpack Features</h2>
+                <p>BadPCMC includes carefully selected mods to optimize performance and enhance gameplay on low-end PCs</p>
+            </div>
+            
+            <div class="mod-categories">
+                <div class="mod-category">
+                    <h3><i class="fas fa-tachometer-alt mod-icon"></i> Performance</h3>
+                    <ul class="mod-list">
+                        <li>
+                            <span class="mod-name">Sodium + Sodium Extra</span>
+                            <span class="mod-purpose">Rendering optimization</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">Lithium</span>
+                            <span class="mod-purpose">Game logic optimization</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">Dynamic FPS</span>
+                            <span class="mod-purpose">Reduce GPU usage when idle</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">EntityCulling</span>
+                            <span class="mod-purpose">Only render visible entities</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mod-category">
+                    <h3><i class="fas fa-eye mod-icon"></i> Visual Improvements</h3>
+                    <ul class="mod-list">
+                        <li>
+                            <span class="mod-name">Better Biome Reblend</span>
+                            <span class="mod-purpose">Smoother biome transitions</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">Continuity</span>
+                            <span class="mod-purpose">Connected textures</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">3D Skin Layers</span>
+                            <span class="mod-purpose">Better player models</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">LambDynamicLights</span>
+                            <span class="mod-purpose">Dynamic lighting</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mod-category">
+                    <h3><i class="fas fa-cogs mod-icon"></i> Utilities & Configuration</h3>
+                    <ul class="mod-list">
+                        <li>
+                            <span class="mod-name">Mod Menu</span>
+                            <span class="mod-purpose">Easy mod management</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">YetAnotherConfigLib</span>
+                            <span class="mod-purpose">Advanced configuration</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">CraftPresence</span>
+                            <span class="mod-purpose">Discord rich presence</span>
+                        </li>
+                        <li>
+                            <span class="mod-name">Fullbright</span>
+                            <span class="mod-purpose">Always maximum brightness</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h3>Additional Optimizations</h3>
+                <p>More performance-focused mods included in BadPCMC</p>
+            </div>
+            
+            <div class="mod-categories">
+                <div class="mod-category">
+                    <h3><i class="fas fa-rocket mod-icon"></i> Additional Performance</h3>
+                    <ul class="mod-list">
+                        <li>CullLeaves</li>
+                        <li>More Culling</li>
+                        <li>FerriteCore</li>
+                        <li>ImmediatelyFast</li>
+                        <li>ScalableLux</li>
+                    </ul>
+                </div>
+                
+                <div class="mod-category">
+                    <h3><i class="fas fa-tools mod-icon"></i> Utility Mods</h3>
+                    <ul class="mod-list">
+                        <li>Cloth Config v20</li>
+                        <li>Fabric API</li>
+                        <li>Forge Config API Port</li>
+                        <li>Language Reload</li>
+                        <li>MidnightLib</li>
+                    </ul>
+                </div>
+                
+                <div class="mod-category">
+                    <h3><i class="fas fa-sliders-h mod-icon"></i> More Utilities</h3>
+                    <ul class="mod-list">
+                        <li>Placeholder API</li>
+                        <li>Reese's Sodium Options</li>
+                        <li>Remove Reloading Screen</li>
+                        <li>UniLib</li>
+                        <li>Visuality</li>
+                        <li>Alternate Current</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why BadPCMC Section -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose BadPCMC?</h2>
+                <p>Created with personal experience to solve a real problem</p>
+            </div>
+            
+            <div class="why-content">
+                <div class="why-text">
+                    <p>BadPCMC was born out of necessity. I created this modpack for my own laptop, which couldn't even run Vanilla Minecraft properly. Through careful selection and configuration of performance mods, I transformed my struggling laptop into a capable Minecraft machine.</p>
+                    
+                    <p>This modpack is pre-configured for weak hardware, so you don't need to spend hours tweaking settings. Just install and play! Every mod has been selected to balance performance improvements with visual quality, ensuring you still get an enjoyable Minecraft experience.</p>
+                    
+                    <p>If your PC struggles with Minecraft, BadPCMC is your solution to finally enjoy a smooth, lag-free experience. Created with love and personal experience—this modpack made Minecraft playable on my underpowered laptop, and it can do the same for you!</p>
+                </div>
+                
+                <div class="why-points">
+                    <div class="point">
+                        <i class="fas fa-laptop point-icon"></i>
+                        <div>
+                            <h3>Optimized for Low-End PCs</h3>
+                            <p>Specifically designed for laptops and PCs that struggle with Vanilla Minecraft.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point">
+                        <i class="fas fa-sliders-h point-icon"></i>
+                        <div>
+                            <h3>Pre-Configured Settings</h3>
+                            <p>No need to tweak settings - just install and play with optimal performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point">
+                        <i class="fas fa-balance-scale point-icon"></i>
+                        <div>
+                            <h3>Performance & Visual Balance</h3>
+                            <p>Carefully selected mods that improve performance without sacrificing visual quality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point">
+                        <i class="fas fa-bolt point-icon"></i>
+                        <div>
+                            <h3>Smooth Gameplay</h3>
+                            <p>Enjoy Minecraft on hardware that previously couldn't run it properly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="download-card">
+                <h2>Download BadPCMC</h2>
+                <p>Available for free on Modrinth. Transform your Minecraft experience today!</p>
+                
+                <div class="download-stats">
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Optimization Mods</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1-Click</span>
+                        <span class="stat-label">Installation</span>
+                    </div>
+                </div>
+                
+                <a href="https://modrinth.com/modpack/badpcmc" class="btn btn-accent" target="_blank" rel="noopener">
+                    <i class="fas fa-download"></i> Download on Modrinth
+                </a>
+                
+                <p style="margin-top: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> Requires Minecraft and access to Modrinth for installation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BadPCMC</h3>
+                    <p>A Minecraft modpack designed specifically for players with low-end hardware. Transform your gaming experience today.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#why">Why BadPCMC</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://modrinth.com/modpack/badpcmc" target="_blank" rel="noopener">Modrinth Download</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 BadPCMC Minecraft Modpack. Minecraft is a trademark of Mojang AB. This is an unofficial modpack and is not affiliated with Mojang.</p>
+                <p>Created with ❤️ for the Minecraft community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navAnchors = document.querySelectorAll('.nav-links a');
+        navAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animate stats in download section when they come into view
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = document.querySelectorAll('.stat-number');
+                    stats.forEach(stat => {
+                        // Simple animation for stats
+                        stat.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            stat.style.transform = 'scale(1)';
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        const downloadSection = document.getElementById('download');
+        if (downloadSection) {
+            observer.observe(downloadSection);
+        }
+    </script>
+</body>
+</html>
